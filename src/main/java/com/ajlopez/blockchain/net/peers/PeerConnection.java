@@ -3,8 +3,11 @@ package com.ajlopez.blockchain.net.peers;
 import com.ajlopez.blockchain.net.MessageChannel;
 import com.ajlopez.blockchain.net.Status;
 import com.ajlopez.blockchain.net.messages.Message;
-import javafx.util.Pair;
+//import javafx.util.Pair;
 
+//Options for Pair from: https://www.techiedelight.com/five-alternatives-pair-class-java/
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Queue;
@@ -18,7 +21,7 @@ public class PeerConnection implements PeerNode {
     private final MessageInputStream messageInputStream;
     private final MessageOutputStream messageOutputStream;
     private final MessageChannel inputChannel;
-
+    
     private Queue<Pair<Peer, Message>> queue = new ConcurrentLinkedQueue<>();
     private boolean started;
     private boolean stopped;
@@ -78,6 +81,6 @@ public class PeerConnection implements PeerNode {
 
     public void postMessage(Peer peer, Message message) {
         if (!stopped)
-            this.queue.add(new Pair(peer, message));
+            this.queue.add(new ImmutablePair<>(peer, message));
     }
 }

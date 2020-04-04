@@ -11,7 +11,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import sun.security.smartcardio.SunPCSC;
+//import sun.security.smartcardio.SunPCSC;
 
 import java.io.IOException;
 import java.math.BigInteger;

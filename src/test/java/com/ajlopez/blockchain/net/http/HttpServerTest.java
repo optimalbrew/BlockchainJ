@@ -1,7 +1,7 @@
 package com.ajlopez.blockchain.net.http;
 
 import com.ajlopez.blockchain.jsonrpc.TopProcessor;
-import jdk.internal.util.xml.impl.Input;
+//import jdk.internal.util.xml.impl.Input;
 import org.junit.Assert;
 import org.junit.Test;
 
